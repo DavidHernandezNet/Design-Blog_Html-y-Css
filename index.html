@@ -18,7 +18,7 @@
 </h1>
 </header>
 <!--Fin de Cabecera-->
-</body>
+
 
 <!-- Menu de nave-->
 <nav id="nav">
@@ -26,8 +26,20 @@
     <li><a href="#">Inicio</a></li>
     <li><a href="#">Contenido</a></li>
     <li><a href="#">Requerimentos</a></li>
-    <li><a href="#">Lenguajes</a></li>
-    <li><a href="#">Frameworks</a></li>
+    
+    <li><a href="#">Lenguajes</a>
+    <ul>
+        <li> <a href="#">HTML</a></li>
+        <li> <a href="#">CSS</a></li>
+    </ul>
+    </li>
+    
+    <li><a href="#">Frameworks</a>
+    <ul>
+        <li><a href="#">Laravel</a></li>
+        <li> <a href="#">Angular</a></li>
+    </ul>
+    </li>
     <li><a href="#">Proyectos</a></li>
     <li><a href="#">El instructor</a></li>
     <li><a href="#">Reseñas</a></li>
@@ -36,4 +48,78 @@
 </ul>
 </nav>
 <!--Fin del menu nav-->
+
+
+<!--Inicio del contenido central-->
+<div id="content">    
+
+    <!--Inicio de la barra lateral-->
+<aside id="aside">
+<div class="widget" id=login> 
+    <h3>Entrar a la web</h3>
+
+    <form method="get" action="">
+    <label for="">Usuario</label>
+    <input type="text">
+
+    <label for="">Contraseña</label>
+    <input type="password">
+
+    <input type="submit" value="Entrar">
+</form>
+    <a href="#">Zona de alumnos</a> 
+    <a href="#">Zona de profesor</a> 
+    <a href="#">Calificaciones</a> 
+    
+</div>
+
+<div class="widget" id=login> 
+    <h3>Aula virtual 1</h3>
+
+    <form method="get" action="">
+    <label for="">Usuario</label>
+    <input type="text">
+
+    <label for="">Contraseña</label>
+    <input type="password">
+
+    <input type="submit" value="Entrar">
+    </form>
+</div>
+
+<div class="widget" id=login> 
+    <h3>Aula virtual 2</h3>
+
+    <form method="get" action="">
+    <label for="">Usuario</label>
+    <input type="text">
+
+    <label for="">Contraseña</label>
+    <input type="password">
+
+    <input type="submit" value="Entrar">
+    </form>
+</div>
+
+<div class="widget" id=login> 
+    <h3>Enlaces de interés</h3>
+    <ul>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Tienda online</a></li>
+        <li><a href="#">Suscripción</a></li>
+        <li><a href="#">Registro</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+    
+    
+
+</div>
+</aside>    
+    <!--Fin de la barra lateral-->
+
+</div>
+<!--Fin del contenido central-->
+
+
+</body>
 </html>

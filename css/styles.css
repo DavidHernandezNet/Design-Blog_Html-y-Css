@@ -14,7 +14,23 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "fjalla";
+  src: url("fonts/FjallaOne-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Cargamos iconos el teclado esta asociado a in icono svg*/
+@font-face {
+  font-family: "icons";
+  src: url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format('svg');
+  url("fonts/websymbols-regular-webfont.eot");
+  src: url("fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"),
+url("fonts/websymbols-regular-webfont.woff") format("woff"),
+url("fonts/websymbols-regular-webfont.ttf") format("truetype"); 
+  font-weight: normal;
+  font-style: normal;
+}
 /** Estilos Generales **/
 * {
   padding: 0px;
@@ -23,6 +39,89 @@
 
 body {
   background-image: url("../img/paven.png"); /*llamar img desde css*/
+}
+
+a{
+  color: #529125;
+  text-decoration: none;
+}
+a:visited{
+  color: #529125;
+  
+}
+
+a:hover{
+  color: #285616;
+}
+
+/*Cree clases para aplicarlos a la barra lateral titulos*/
+.red{
+  color: #9b2422 !important;/*Error de color o caracteristicas por la especificación en css"NADA AFECTA EL ESTILO"*/
+}
+.blue{
+color: #0c73f2 !important;
+}
+.orange{
+  color: #d69d2a;
+}
+
+.icon{
+  font-family: "icons";
+float: left;
+margin-right: 5px;
+margin-top: -2px;
+}
+
+/*FORMULARIOS*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select{
+border: 1px solid #c9c9c9 ;
+box-shadow: 0px 0px 2px inset;
+background: white;
+padding: 1px;
+padding-top: 2px;
+padding-bottom: 2px;
+color: gray;
+transition: all 300ms;
+}
+
+input[type="text"]:focus,/*Focus cunado estes en un elemento */
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus{
+border: 1px solid #70b231;
+color: black;/*Se activa cuando haces focus*/
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button{
+  display: block;/*Lo manipularemos a nuestro gusto*/
+  border-radius: 2px;
+  border: 1px solid green;
+  cursor: pointer;
+  width: 60px;
+  padding: 3px;
+ background-color: #70b231;
+ color: white;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+box-shadow: 0px 0px 2px gray;
+}
+
+input[type="button"]:active,/*active para cuando se este interactuando*/
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active{
+box-shadow: 0px 0px 3px gray inset;/*inset para el efecto que estaria hacia adentro*/
+text-shadow: 0px 0px 1px #ccc;
 }
 
 /** CABECERA*/
@@ -67,7 +166,10 @@ body {
 #header a {
   color: #70b231;
 }
-
+.clearfix{/*Se limpian los fotados ya no necesita adaptarse*/
+  float: none;
+  clear: both;
+}
 /*Barra de navegación*/
 #nav {
   width: 100%;
@@ -91,7 +193,7 @@ body {
   line-height: 40px; /*Para que se centre verticalmente*/
   float:left; /*Se colocarán a lado del otro*/
   border-right: 1px solid gray; /*Border a la derecha de color gray*/
-  transition: all 300ms; 
+ 
 }
 
 #nav > ul > li a {
@@ -107,7 +209,201 @@ body {
   border-left: 1px solid gray; /*Al primer hijo le faltaba el border*/
 }
 
-#nav > ul > li :hover {
+#nav > ul > li:hover{
   background-color: #70b231;
   box-shadow: 0px 0px 4px green inset; /* alto ancho sombra el 4px es difuminado*/
+  transition: all 300ms; 
+}
+
+/*Menu desplegable*/
+
+#nav > ul > li > ul{
+  display: none; /*Escondera los elementos ul*/
+  position: absolute; /*No desformará los elementos serán completamente mostrados*/
+  width: 160px;
+  box-shadow: 0px 2px /*Abajo*/ 2px gray;
+  z-index: 1;/*Estará encima de los elementos*/
+ }
+
+
+#nav > ul > li:hover > ul{
+  display: block;
+  
+}
+
+#nav > ul > li:hover > ul > li{
+  background: #f2f1f0;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 8px;
+  line-height: 25px;/*Centra verticalmente*/
+  font-size: 13px;
+}
+
+#nav > ul > li:hover > ul > li a{
+  color: #666666;
+ }
+
+#nav > ul > li:hover > ul > li:hover{
+box-shadow: 0px 0px 6px #ccc inset;
+background: #d1d0d0;
+transition: all 300ms;
+}
+
+/*CONTENIDO*/
+#content {
+width: 1250px;
+min-height: 1100px; /*Asi tendrá un scroll minimo*/
+margin: 0px auto;
+
+}
+/*BARRA LATERAL*/
+#aside, #frase{
+
+  width: 200px;
+  float: left;/*La caja flotara a al izquierda*/
+  margin: 30px;
+  background-color: white;
+border: 1px solid #ccc;
+box-shadow: 0px 2px 2px #ccc;/*sombras eje y con 2 de difuminado*/
+font-family: sans-serif, Arial, Helvetica;
+}
+#frase{
+  /*clear: both;/*Controla los flotados eviat pegarse uno a lado del otro*/
+  width: 180px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#aside .widget{
+  display: block;
+  width: 180px;
+  margin: 5px auto;
+  padding: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  border-bottom: 1px dashed #333333; /*Porpiedad css lineas separadoras guiones*/
+}
+
+#aside .widget:last-child{
+  margin-bottom: 20px;
+}
+
+#aside h3{
+  display: block;
+  color: #333333;
+  width: 100%;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 15px;
+  background: #f2f3f2;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+}
+
+/*FORMULARIO BARRA LATERAL*/
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="email"],
+#aside div input[type="password"],
+#aside div a
+{
+display: block;/*Para manipularlo como quiera*/
+width: 95%;
+margin-top: 2px;
+margin-bottom: 2px;
+}
+
+#aside div input[type="button"],
+#aside div input[type="submit"],
+#aside div button{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+#aside input,
+#aside label{
+  margin: 0px auto;
+  text-align: center;
+}
+
+#aside li{
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  list-style: square;/*Estilo de la lista*/
+}
+
+/*Secciones*/
+#sections{
+  float: right;
+  width: 75%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 20px;
+}
+
+#sections .titulo{
+font-family: fjalla;
+font-size: 24px;
+font-weight: normal;
+letter-spacing: 1px;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 10px;
+border-bottom: 1px solid #ccc;
+margin-top: -20px
+}
+
+#sections section{
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 4px #ccc;
+  color: #333333;
+  font-size: 16px;
+  overflow: hidden; /*Lo que sobre salga de las secciones se oculta*/
+}
+
+#sections .artitle{
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+#sections .date{
+  color: gray;
+  font-size: 14px;
+}
+
+#sections .stickerOne, .stickerTwo{
+  position: absolute;
+  margin-top: -40px;
+  z-index: 0;
+}
+#sections .stickerTwo{
+  margin-left: 860px;
+}
+
+/*Footer*/
+#history{
+  float: right;
+  margin-top: 20px;
+  font-family: sans-serif;
+  margin-right: 20px;
+}
+
+#footer{
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  margin-top: 40px;
+  background-color: #333333;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  box-shadow: 0px 0px 2px gray;
+
 }
