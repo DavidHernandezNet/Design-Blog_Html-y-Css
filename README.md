@@ -1,5 +1,5 @@
 # Design-Blog_Html-y-Css
-## Diseño y Maquetado de un blog sencillo que lleve acabo haciendo un curso, usando HTML y CSS, No tiene responsive.
+## Diseño y Maquetado de un blog sencillo que lleve acabo haciendo un curso, usando HTML y CSS.
 #### Esto se hizo apartir de un diseño que se mostraba en el curso.
 ##### Visita [Mi Sitio Web](https://davidhernandezn.com/)
 ###### Instructor del curso: Victor Robles Web
